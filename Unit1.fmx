@@ -1,0 +1,107 @@
+object Form1: TForm1
+  Left = 0
+  Top = 0
+  ClientHeight = 480
+  ClientWidth = 334
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  OnCreate = FormCreate
+  DesignerMasterStyle = 0
+  object ToolBar1: TToolBar
+    Align = Bottom
+    Position.Y = 432.000000000000000000
+    Size.Width = 334.000000000000000000
+    Size.Height = 48.000000000000000000
+    Size.PlatformDefault = False
+    StyleLookup = 'toolbarstyle'
+    TabOrder = 0
+    object Label1: TLabel
+      Align = Left
+      StyledSettings = [Family, FontColor]
+      Margins.Left = 5.000000000000000000
+      Margins.Top = 5.000000000000000000
+      Margins.Right = 5.000000000000000000
+      Margins.Bottom = 5.000000000000000000
+      Position.X = 5.000000000000000000
+      Position.Y = 5.000000000000000000
+      Size.Width = 244.000000000000000000
+      Size.Height = 38.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = 'toollabel'
+      TextSettings.Font.Size = 10.000000000000000000
+      TextSettings.Font.StyleExt = {00070000000000000004000000}
+      TextSettings.Trimming = None
+      Text = #25910#24405#20102'108326'#39318#21476#35799#25991#65292#28857#20987#21047#26032#25353#38062#38543#26426#26174#31034#12290
+      TabOrder = 1
+    end
+    object ShadowEffect4: TShadowEffect
+      Distance = 3.000000000000000000
+      Direction = 45.000000000000000000
+      Softness = 0.300000011920929000
+      Opacity = 0.600000023841857900
+      ShadowColor = claBlack
+    end
+    object Button1: TButton
+      Align = Right
+      Margins.Left = 5.000000000000000000
+      Margins.Top = 5.000000000000000000
+      Margins.Right = 5.000000000000000000
+      Margins.Bottom = 5.000000000000000000
+      Position.X = 270.000000000000000000
+      Position.Y = 5.000000000000000000
+      Size.Width = 59.000000000000000000
+      Size.Height = 38.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = 'refreshtoolbutton'
+      TabOrder = 2
+      Text = #38543#26426
+      TextSettings.Trimming = None
+      OnClick = Button1Click
+    end
+  end
+  object WebBrowser1: TWebBrowser
+    Align = Client
+    Size.Width = 329.000000000000000000
+    Size.Height = 427.000000000000000000
+    Size.PlatformDefault = False
+    Margins.Left = 5.000000000000000000
+    Margins.Top = 5.000000000000000000
+    WindowsEngine = EdgeIfAvailable
+    OnDidStartLoad = WebBrowser1DidStartLoad
+  end
+  object F: TFDConnection
+    Params.Strings = (
+      'Database=C:\Users\Administrator\Desktop\WebView\sctest.s3db'
+      'DriverID=SQLite')
+    Connected = True
+    LoginPrompt = False
+    BeforeConnect = FBeforeConnect
+    Left = 176
+    Top = 160
+  end
+  object FDTable1: TFDTable
+    IndexFieldNames = 'id'
+    Connection = F
+    ResourceOptions.AssignedValues = [rvEscapeExpand]
+    TableName = 'gushiwen'
+    Left = 80
+    Top = 304
+  end
+  object FDQuery1: TFDQuery
+    Connection = F
+    SQL.Strings = (
+      'select * from gushiwen')
+    Left = 208
+    Top = 264
+  end
+  object FDPhysSQLiteDriverLink1: TFDPhysSQLiteDriverLink
+    Left = 144
+    Top = 341
+  end
+  object FDGUIxWaitCursor1: TFDGUIxWaitCursor
+    Provider = 'FMX'
+    Left = 221
+    Top = 389
+  end
+end
